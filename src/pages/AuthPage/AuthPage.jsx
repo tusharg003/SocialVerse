@@ -1,11 +1,17 @@
 import { Box, Container, Flex, Link, Text, VStack } from '@chakra-ui/react';
 import AuthForm from '../../components/AuthForm/AuthForm';
 
+// Peach (#FFDAB9)
+// Burnt Orange (#FFA500)
+// Crimson (#DC143C)
+// Lavender (#E6E6FA)
+// Dark Slate Blue (#483D8B)
+
 const AuthPage = () => {
   return (
     <VStack
-    m={0}
-      bg={'gray.100'}
+      m={0}
+      bg={'#e6e6fa'}
       minW={'100vh'}
       justifyContent={'center'}
       alignItems={'center'}
@@ -13,6 +19,7 @@ const AuthPage = () => {
       minH={'100vh'}>
       <Flex
         // make the name appear above the auth form in mobile screens
+        flexDir={{ base: 'column-reverse', md: 'row' }}
         gap={4}
         w={'75vw'}
         h={'95vh'}
@@ -27,7 +34,7 @@ const AuthPage = () => {
             mx={'0'}
             my={'auto'}>
             <Text
-              color={'blue.400'}
+              color={'#483d8b'}
               fontSize={'4rem'}
               as={'b'}
               // fontFamily={'sans'}
@@ -39,7 +46,10 @@ const AuthPage = () => {
             </Text>
           </VStack>
         </Box>
-        <Container minW={'450px'} alignItems={'center'} justifyContent={'center'}>
+        <Container
+          minW={{ base: '100%', md: '450px' }}
+          alignItems={'center'}
+          justifyContent={'center'}>
           <AuthForm />
         </Container>
       </Flex>
