@@ -1,6 +1,6 @@
-import { Box, Container, Flex, Link, Text, VStack } from '@chakra-ui/react';
+import { Box, Container, Flex } from '@chakra-ui/react';
 import AuthForm from '../../components/AuthForm/AuthForm';
-
+import AuthPageImg from '/AuthPageImg.jpeg';
 // Peach (#FFDAB9)
 // Burnt Orange (#FFA500)
 // Crimson (#DC143C)
@@ -9,60 +9,39 @@ import AuthForm from '../../components/AuthForm/AuthForm';
 
 const AuthPage = () => {
   return (
-    <VStack
-      m={0}
-      bg={'#e6e6fa'}
-      minW={'100vh'}
-      justifyContent={'center'}
-      alignItems={'center'}
-      px={4}
-      minH={'100vh'}>
+    <Box bgGradient={'linear(to-b,yellow,#f09819)'}>
       <Flex
-        // make the name appear above the auth form in mobile screens
-        flexDir={{ base: 'column-reverse', md: 'row' }}
-        gap={4}
-        w={'75vw'}
-        h={'95vh'}
-        p={0}
-        justifyContent={'center'}
-        alignItems={'center'}>
-        <Box display={{ base: 'none', md: 'block' }}>
-          <VStack
-            flex={2}
-            alignItems={'flex-start'}
-            p={'20px'}
-            mx={'0'}
-            my={'auto'}>
-            <Text
-              color={'#483d8b'}
-              fontSize={'4rem'}
-              as={'b'}
-              // fontFamily={'sans'}
-              lineHeight={'4rem'}>
-              SocialVerse
-            </Text>
-            <Text fontSize={'1.5rem'} asfontFamily={'sans'}>
-              Build everlasting connections with SocialVerse.
-            </Text>
-          </VStack>
-        </Box>
+        backgroundImage={AuthPageImg}
+        backgroundPosition={{ base: 'center', md: 'left' }}
+        backgroundRepeat={'no-repeat'}
+        bgSize={'cover'}
+        alignItems={'center'}
+        pos={'relative'}
+        justifyContent='flex-end' // Aligns items to the end of the flex container
+        h={'100vh'}>
         <Container
-          minW={{ base: '100%', md: '450px' }}
-          alignItems={'center'}
-          justifyContent={'center'}>
+          minW={{ base: '80%', md: '450px' }}
+          // m={{ base: 'auto', md: '5em' }} // Adjust margin-right as needed
+        >
           <AuthForm />
         </Container>
       </Flex>
-      <Text fontSize={15} mb={2}>
-        Made with ❤️ by{' '}
-        <Link
-          href='https://github.com/tusharg003'
-          color={'blue.400'}
-          isExternal>
-          Tushar Gupta
-        </Link>
-      </Text>
-    </VStack>
+      {/* <Text
+          pos={'absolute'}
+          bottom={0}
+          left={'50em'}
+          p={2}
+          fontSize={15}
+          mb={2}>
+          Made with ❤️ by{' '}
+          <Link
+            href='https://github.com/tusharg003'
+            color={'blue.400'}
+            isExternal>
+            Tushar Gupta
+          </Link>
+        </Text> */}
+    </Box>
   );
 };
 export default AuthPage;

@@ -4,20 +4,26 @@ const AuthForm = () => {
   return (
     <>
       <Box
-        bg={'white'}
         boxShadow={'lg'}
         borderRadius={10}
+        bg='rgb(000, 000, 000, 0.4)'
+        // filter={'auto'}
+        // blur={'1px'}
         px={5}
         py={8}
         m={'auto'}>
         <VStack spacing={4}>
           <Input
+            focusBorderColor='white'
+            _placeholder={{ opacity: 0.9, color: 'white' }}
             placeholder='Email or username'
             fontSize={20}
             size={'lg'}
             type='email'
           />
           <Input
+            focusBorderColor='white'
+            _placeholder={{ opacity: 0.9, color: 'white' }}
             placeholder='Password'
             fontSize={20}
             size={'lg'}
