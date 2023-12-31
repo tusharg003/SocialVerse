@@ -1,6 +1,7 @@
-import { Box, Container, Flex } from '@chakra-ui/react';
+import { Box, Container, Flex, Text } from '@chakra-ui/react';
 import AuthForm from '../../components/AuthForm/AuthForm';
 import AuthPageImg from '/AuthPageImg.jpeg';
+import { Link } from 'react-router-dom';
 // Peach (#FFDAB9)
 // Burnt Orange (#FFA500)
 // Crimson (#DC143C)
@@ -9,7 +10,7 @@ import AuthPageImg from '/AuthPageImg.jpeg';
 
 const AuthPage = () => {
   return (
-    <Box bgGradient={'linear(to-b,yellow,#f09819)'}>
+    <Box bgGradient={'linear(to-b,yellow,#f09819)'} pos={'relative'}>
       <Flex
         backgroundImage={AuthPageImg}
         backgroundPosition={{ base: 'center', md: 'left' }}
@@ -26,21 +27,29 @@ const AuthPage = () => {
           <AuthForm />
         </Container>
       </Flex>
-      {/* <Text
-          pos={'absolute'}
-          bottom={0}
-          left={'50em'}
-          p={2}
-          fontSize={15}
-          mb={2}>
-          Made with ❤️ by{' '}
-          <Link
-            href='https://github.com/tusharg003'
-            color={'blue.400'}
-            isExternal>
-            Tushar Gupta
-          </Link>
-        </Text> */}
+
+      {/* BUTTOM NAVIGATION TEXT */}
+      <Text
+        bg='rgba(0, 0, 0, 0.4)'
+        w={'100%'}
+        // as={'b'}
+        color={'white'}
+        pos={'absolute'}
+        bottom={0}
+        left={'50%'}
+        transform='translate(-50%, -50%)'
+        fontSize={12}
+        mb={2}
+        textAlign='center' // Added textAlign prop for horizontal centering
+      >
+        Made with ❤️ by{' '}
+        <Link
+          href='https://github.com/tusharg003'
+          color={'blue.400'}
+          isExternal>
+          Tushar Gupta
+        </Link>
+      </Text>
     </Box>
   );
 };
