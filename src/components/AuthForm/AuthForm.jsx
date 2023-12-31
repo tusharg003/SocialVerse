@@ -20,7 +20,7 @@ const AuthForm = () => {
         bg='rgb(000, 000, 000, 0.6)'
         px={4}
         py={8}>
-        <VStack spacing={4} padding={'1em'}>
+        <VStack spacing={3} padding={'1em'}>
           {isLogin ? (
             <>
               <Input
@@ -28,7 +28,7 @@ const AuthForm = () => {
                 focusBorderColor='white'
                 _placeholder={{ opacity: 0.9, color: 'white' }}
                 placeholder='Email or username'
-                fontSize={15}
+                fontSize={14}
                 size={'sm'}
                 type='email'
               />
@@ -37,7 +37,7 @@ const AuthForm = () => {
                 focusBorderColor='white'
                 _placeholder={{ opacity: 0.9, color: 'white' }}
                 placeholder='Password'
-                fontSize={15}
+                fontSize={14}
                 size={'sm'}
                 type='password'
               />
@@ -109,8 +109,8 @@ const AuthForm = () => {
             lineHeight={'.1em'}>
             <Image src={'/google.png'} w={5} />
             <Text mx={'2'} color={'blue.500'} as={'b'} fontSize={15}>
-              {isLogin ?'Log in ' :'Sign up '}
-               with Google
+              {isLogin ? 'Log in ' : 'Sign up '}
+              with Google
             </Text>
           </Flex>
         </VStack>
