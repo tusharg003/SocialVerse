@@ -8,10 +8,23 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const navigate = useNavigate();
+  const [inputs, setInputs] = useState({
+    email: '',
+    password: '',
+  });
 
+  const handleAuth = () => {
+    if (!inputs.email || !inputs.password) {
+      alert('Please fill all the feilds');
+      return;
+    }
+    navigate('/');
+  };
   return (
     <>
       <Box
@@ -24,6 +37,10 @@ const AuthForm = () => {
           {isLogin ? (
             <>
               <Input
+                value={inputs.email}
+                onChange={(e) =>
+                  setInputs({ ...inputs, email: e.target.value })
+                }
                 color={'white'}
                 focusBorderColor='white'
                 _placeholder={{ opacity: 0.9, color: 'white' }}
@@ -33,6 +50,10 @@ const AuthForm = () => {
                 type='email'
               />
               <Input
+                value={inputs.password}
+                onChange={(e) =>
+                  setInputs({ ...inputs, password: e.target.value })
+                }
                 color={'white'}
                 focusBorderColor='white'
                 _placeholder={{ opacity: 0.9, color: 'white' }}
@@ -42,7 +63,11 @@ const AuthForm = () => {
                 type='password'
               />
 
-              <Button width={'100%'} color='blue.500' size={'sm'}>
+              <Button
+                width={'100%'}
+                color='blue.500'
+                size={'sm'}
+                onClick={handleAuth}>
                 Log in
               </Button>
             </>
