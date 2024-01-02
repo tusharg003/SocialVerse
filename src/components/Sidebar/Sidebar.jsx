@@ -1,5 +1,5 @@
 import { Avatar, Box, Flex, Tooltip } from '@chakra-ui/react';
-import {  Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import { GoHomeFill } from 'react-icons/go';
 import { FaUserFriends } from 'react-icons/fa';
 import { IoIosNotifications } from 'react-icons/io';
@@ -50,7 +50,7 @@ const Sidebar = () => {
               px={2}
               py={2}
               justifyContent={{ base: 'center', md: 'flex-start' }}
-              alignContent={'center'}>
+              alignItems={'center'}>
               <Box>{item.icon}</Box>
               <Box ml={3} display={{ base: 'none', md: 'block' }}>
                 {item.text}
