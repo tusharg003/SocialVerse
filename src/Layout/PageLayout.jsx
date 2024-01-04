@@ -9,7 +9,6 @@ const PageLayout = ({ children }) => {
     base: 'horizontal',
     md: 'vertical',
   });
-  console.log(sidebarDirection);
 
   return (
     <>

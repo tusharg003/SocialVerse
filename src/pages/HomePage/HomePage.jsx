@@ -6,15 +6,15 @@ const HomePage = () => {
     <Box bg={'gray.100'}>
       <Container maxW={'container.lg'} minH='100vh' pt={3}>
         {' '}
-        <Flex gap={20}>
+        <Flex gap={'5em'}>
           <Box flex={2} py={0} w={{base:'100%',md:'80%'}}>
             <FeedPosts />
           </Box>
           <Box
             flex={1}
-            mr={10}
+            mr={2}
             display={{ base: 'none', md: 'block' }}
-            maxW={'300px'}>
+            maxW={'200px'}>
             Suggested Users
           </Box>
         </Flex>
