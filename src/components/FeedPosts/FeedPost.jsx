@@ -4,11 +4,11 @@ import PostFooter from './PostFooter';
 import defaultImg from '../../../public/AuthPageImg.jpeg';
 const FeedPost = () => {
   return (
-    <Box boxShadow={'lg'} px={4} >
+    <Box boxShadow={'lg'} px={4} borderRadius={5}>
       <PostHeader />
       <Box>
         <Text fontSize={'sm'}>this is a sample caption</Text>
-        <Image src={defaultImg} alt='default image' />
+        <Image borderRadius={4} src={defaultImg} alt='default image' />
       </Box>
       <PostFooter />
     </Box>
