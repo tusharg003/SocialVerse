@@ -63,15 +63,18 @@ const PostFooter = () => {
       <Divider />
       <Flex width={'100%'} justifyContent={'space-between'}>
         <Button
+          w={{ md: '2rem' }}
           gap={1}
           flexGrow={1}
           bg={'white'}
-          display={'flex'}
           onClick={handleLikeBtnClick}>
           {isLiked ? <BiSolidLike size={'1.2em'} /> : <BiLike size={'1.2em'} />}
-          <Text fontSize={'sm'}>{isLiked ? 'Liked' : 'Like'}</Text>
+          <Text pr={2} fontSize={'sm'}>
+            {isLiked ? 'Liked' : 'Like'}
+          </Text>
         </Button>
         <Button
+          w={{ md: '2rem' }}
           gap={1}
           flexGrow={1}
           onClick={handleCommentBtnClick}
@@ -79,6 +82,7 @@ const PostFooter = () => {
           <LiaComment size={'1.2em'} /> <Text fontSize={'sm'}>Comment</Text>
         </Button>
         <Button
+          w={{ md: '2rem' }}
           gap={1}
           flexGrow={1}
           bg={'white'}
@@ -92,31 +96,33 @@ const PostFooter = () => {
           <Text fontSize={'sm'}>{isSaved ? 'Unsave' : 'Save'}</Text>
         </Button>
       </Flex>
-      <Divider />
 
       {/* Comment input section */}
       {commmenting && (
-        <InputGroup size={'sm'} borderRadius={3} py={1}>
-          <InputLeftAddon border={'hidden'} cursor={'pointer'} bg={'white'}>
-            <Avatar size={'xs'} />
-          </InputLeftAddon>
-          <Input
-            variant={'flushed'}
-            placeholder='Post a Comment!'
-            ref={inputRef}
-          />
+        <>
+          <Divider />
+          <InputGroup size={'sm'} borderRadius={3} py={1}>
+            <InputLeftAddon border={'hidden'} cursor={'pointer'} bg={'white'}>
+              <Avatar size={'xs'} />
+            </InputLeftAddon>
+            <Input
+              variant={'flushed'}
+              placeholder='Post a Comment!'
+              ref={inputRef}
+            />
 
-          <InputRightAddon
-            as={Button}
-            ml={3}
-            bg={'white'}
-            border={'hidden'}
-            borderRadius={'50%'}
-            p={2}
-            transition={'0.2s ease-in-out'}>
-            <IoSend />
-          </InputRightAddon>
-        </InputGroup>
+            <InputRightAddon
+              as={Button}
+              ml={3}
+              bg={'white'}
+              border={'hidden'}
+              borderRadius={'50%'}
+              p={2}
+              transition={'0.2s ease-in-out'}>
+              <IoSend />
+            </InputRightAddon>
+          </InputGroup>
+        </>
       )}
     </VStack>
   );
