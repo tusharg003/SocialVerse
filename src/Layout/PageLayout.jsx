@@ -20,7 +20,7 @@ const PageLayout = ({ children }) => {
           </Box>
           {sidebarDirection === 'vertical' ? (
             <Flex className='verticalSidebar' h={'92vh'} overflow={'hidden'}>
-              <Box w={{ base: '70px', md: '240px' }} overflowY={'auto'}>
+              <Box w={{ md: '240px' }} overflowY={'auto'}>
                 <Sidebar />
               </Box>
               {/* Content */}
@@ -28,7 +28,7 @@ const PageLayout = ({ children }) => {
                 className='content'
                 flex={1}
                 overflowY={'auto'}
-                w={{ base: 'calc(100% - 70px)', md: 'calc(100% - 240px)' }}>
+                >
                 {children}
               </Box>
             </Flex>
@@ -38,7 +38,7 @@ const PageLayout = ({ children }) => {
                 <Sidebar />
               </Box>
               {/* Content */}dfdf
-              <Box className='content' flex={1} bg={'red'} overflowY={'auto'}>
+              <Box className='content' flex={1} bg={'red'} overflowY={'auto'} w={'100%'}>
                 {children}
               </Box>
             </VStack>
