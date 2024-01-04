@@ -3,7 +3,7 @@ import FeedPost from './FeedPost';
 
 const FeedPosts = () => {
   return (
-    <VStack gap={10}>
+    <VStack gap={5} py={4} px={2} >
       <FeedPost />
       <FeedPost />
       <FeedPost />
