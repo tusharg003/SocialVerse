@@ -13,11 +13,27 @@ import {
 } from '@chakra-ui/react';
 import { IoSend } from 'react-icons/io5';
 import { LiaComment } from 'react-icons/lia';
+import { BiSolidLike } from 'react-icons/bi';
 import { BiLike } from 'react-icons/bi';
 import { useEffect, useRef, useState } from 'react';
-import { LiaBookmark } from 'react-icons/lia';
+import { FaRegBookmark } from 'react-icons/fa';
+import { FaBookmark } from 'react-icons/fa';
 const PostFooter = () => {
+  const [likes, setLikes] = useState(1000);
+  const [isLiked, setIsLiked] = useState(false);
   const [commmenting, setIsCommenting] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
+
+  const handleLikeBtnClick = () => {
+    if (isLiked) {
+      setIsLiked(false);
+      setLikes(likes - 1);
+    } else {
+      setIsLiked(true);
+      setLikes(likes + 1);
+    }
+  };
+
   const handleCommentBtnClick = () => {
     setIsCommenting(!commmenting);
   };
@@ -28,6 +44,9 @@ const PostFooter = () => {
     }
   }, [commmenting]);
 
+  const handleSaveBtnClick = () => {
+    setIsSaved(!isSaved);
+  };
   const inputRef = useRef(null);
   return (
     <VStack w={'100%'} pb={2} px={5}>
@@ -37,15 +56,20 @@ const PostFooter = () => {
         width={'inherit'}
         px={4}
         mt={2}>
-        <Box>36 Likes</Box>
+        <Box>{likes} Likes</Box>
         <Box>69 Comments</Box>
       </Flex>
       {/* <Box h={'2px'} w={'100%'} bgColor={'gray.400'}></Box> */}
       <Divider />
       <Flex width={'100%'} justifyContent={'space-between'}>
-        <Button gap={1} flexGrow={1} bg={'white'} display={'flex'}>
-          <BiLike size={'1.2em'} />
-          <Text fontSize={'sm'}>Like</Text>
+        <Button
+          gap={1}
+          flexGrow={1}
+          bg={'white'}
+          display={'flex'}
+          onClick={handleLikeBtnClick}>
+          {isLiked ? <BiSolidLike size={'1.2em'} /> : <BiLike size={'1.2em'} />}
+          <Text fontSize={'sm'}>{isLiked ? 'Liked' : 'Like'}</Text>
         </Button>
         <Button
           gap={1}
@@ -54,8 +78,18 @@ const PostFooter = () => {
           bg={'white'}>
           <LiaComment size={'1.2em'} /> <Text fontSize={'sm'}>Comment</Text>
         </Button>
-        <Button gap={1} flexGrow={1} bg={'white'} display={'flex'}>
-          <LiaBookmark size={'1.2em'} /> <Text fontSize={'sm'}>Save</Text>
+        <Button
+          gap={1}
+          flexGrow={1}
+          bg={'white'}
+          display={'flex'}
+          onClick={handleSaveBtnClick}>
+          {isSaved ? (
+            <FaBookmark size={'1em'} />
+          ) : (
+            <FaRegBookmark size={'1em'} />
+          )}
+          <Text fontSize={'sm'}>{isSaved ? 'Unsave' : 'Save'}</Text>
         </Button>
       </Flex>
       <Divider />
