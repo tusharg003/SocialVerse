@@ -2,6 +2,7 @@ import { Box, Flex, VStack, useBreakpointValue } from '@chakra-ui/react';
 import { useLocation } from 'react-router-dom';
 import Sidebar from '../components/Sidebar/Sidebar';
 import Navbar from '../components/NavBar/Navbar';
+import SuggestedUsers from '../components/SuggestedUsers/SuggestedUsers';
 
 const PageLayout = ({ children }) => {
   const { pathname } = useLocation();
@@ -23,12 +24,18 @@ const PageLayout = ({ children }) => {
                 <Sidebar />
               </Box>
               {/* Content */}
-              <Box
-                className='content'
-                flex={1}
-                overflowY={'auto'}
-                >
+              <Box className='content' flex={1} overflowY={'auto'}>
                 {children}
+              </Box>
+
+              {/* Suggested  user bar */}
+              <Box
+              bg={'gray.100'}
+                flex={1}
+                pr={2}
+                display={{ base: 'none', md: 'block' }}
+                maxW={{base:'none',md:'340px'}}>
+                <SuggestedUsers />
               </Box>
             </Flex>
           ) : (
@@ -37,7 +44,12 @@ const PageLayout = ({ children }) => {
                 <Sidebar />
               </Box>
               {/* Content */}dfdf
-              <Box className='content' flex={1} bg={'red'} overflowY={'auto'} w={'100%'}>
+              <Box
+                className='content'
+                flex={1}
+                bg={'red'}
+                overflowY={'auto'}
+                w={'100%'}>
                 {children}
               </Box>
             </VStack>

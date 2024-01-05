@@ -22,7 +22,7 @@ const PostHeader = () => {
 
       <Box cursor={'pointer'}>
         <Text
-          fontSize={12}
+          fontSize={14}
           fontWeight={'bold'}
           color={'red'}
           _hover={{ color: 'blue' }}

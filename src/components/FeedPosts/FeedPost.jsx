@@ -4,7 +4,7 @@ import PostFooter from './PostFooter';
 import defaultImg from '../../../public/AuthPageImg.jpeg';
 const FeedPost = () => {
   return (
-    <Box boxShadow={'lg'} borderRadius={5} bg={'white'}>
+    <Box boxShadow={'md'} borderRadius={10} bg={'white'}>
       <PostHeader />
       <Box>
         <Text  px={5} fontSize={'sm'}>this is a sample caption</Text>
