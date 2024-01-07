@@ -23,7 +23,21 @@ const ProfilePageHeaderLarge = () => {
         w={'100%'}
         className='ProfileBannerImage'
         overflow={'hidden'}
-        borderBottomRadius={5}>
+        borderBottomRadius={5}
+        pos={'relative'}>
+        <Button
+          pos={'absolute'}
+          colorScheme='blackAlpha'
+          size={'sm'}
+          bottom={0}
+          right={0}
+          leftIcon={<MdEdit />}
+          m={2}
+          p={2}
+          borderRadius={5}>
+          Edit Banner
+        </Button>
+
         <Image w={'fit'} src={img} />
       </Box>
       <Flex
@@ -40,18 +54,15 @@ const ProfilePageHeaderLarge = () => {
           top={'-30%'}
           ml={'10'}
           pos={'relative'}>
-          <Box
-            as={Button}
+          <Button
             size={'sm'}
             pos={'absolute'}
             bottom={0}
             left={'70%'}
-            bg={'gray.300'}
             p={1}
-            borderRadius={'full'}
-            >
+            borderRadius={'full'}>
             <IoMdCamera color='black' size={'1.2em'} />
-          </Box>
+          </Button>
         </Avatar>
 
         <VStack alignItems={'flex-start'} gap={0} py={1}>

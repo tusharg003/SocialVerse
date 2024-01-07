@@ -23,7 +23,19 @@ const ProfilePageHeaderSmall = () => {
         w={'100%'}
         className='ProfileBannerImage'
         overflow={'hidden'}
-        borderBottomRadius={5}>
+        borderBottomRadius={5}
+        pos={'relative'}>
+        <Button
+          pos={'absolute'}
+          colorScheme='blackAlpha'
+          size={'sm'}
+          bottom={0}
+          right={0}
+          m={2}
+          p={2}
+          borderRadius={'full'}>
+          <MdEdit />
+        </Button>
         <Image w={'fit'} bg={'red'} src={img} />
       </Box>
       <Flex
@@ -40,17 +52,15 @@ const ProfilePageHeaderSmall = () => {
           border={'4px solid white'}
           name='Tushar Gupta'
           top={'-30%'}>
-          <Box
-            as={Button}
+          <Button
             size={'sm'}
             pos={'absolute'}
             bottom={0}
             left={'70%'}
-            bg={'gray.300'}
             p={1}
             borderRadius={'full'}>
             <IoMdCamera color='black' size={'1.2em'} />
-          </Box>
+          </Button>
         </Avatar>
         <VStack
           pos={'absolute'}
