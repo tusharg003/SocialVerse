@@ -48,7 +48,7 @@ const PageLayout = ({ children }) => {
               <Box
                 className='content'
                 flex={1}
-                bg={'red'}
+                // bg={'red'}
                 overflowY={'auto'}
                 w={'100%'}>
                 {children}

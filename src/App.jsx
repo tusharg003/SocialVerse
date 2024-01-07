@@ -6,7 +6,7 @@ import ProfilePage from './pages/ProfilePage/ProfilePage';
 
 const App = () => {
   return (
-    <PageLayout>
+    <PageLayout >
       <Routes>
         <Route path='/' element={<HomePage />}></Route>
         <Route path='/auth' element={<AuthPage />}></Route>
