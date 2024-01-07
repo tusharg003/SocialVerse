@@ -13,11 +13,7 @@ import { IoMdAdd, IoMdCamera } from 'react-icons/io';
 import { MdEdit } from 'react-icons/md';
 const ProfilePageHeaderSmall = () => {
   return (
-    <VStack
-      h={'50vh'}
-      justifyContent={'space-between'}
-      gap={0}
-      boxShadow={'md'}>
+    <VStack h={'50vh'} justifyContent={'space-between'} gap={0}>
       <Box
         h={'40%'}
         w={'100%'}

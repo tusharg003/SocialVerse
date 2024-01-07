@@ -16,8 +16,8 @@ const ProfilePageHeaderLarge = () => {
     <VStack
       h={{ base: '35vh', md: '45vh' }}
       justifyContent={'space-between'}
-      gap={0}
-      boxShadow={'md'}>
+      gap={0}>
+      {' '}
       <Box
         h={'65%'}
         w={'100%'}
@@ -66,12 +66,12 @@ const ProfilePageHeaderLarge = () => {
         </Avatar>
 
         <VStack alignItems={'flex-start'} gap={0} py={1}>
-          <Text fontSize={'2em'} fontWeight={'bold'}>
+          <Text fontSize={'1.6em'} fontWeight={'bold'}>
             Tushar Gupta
           </Text>
           <Text
             lineHeight={'.8em'}
-            fontSize={{ base: '.7em', md: '1em' }}
+            fontSize={'1em'}
             fontWeight={'500'}
             color={'gray'}>
             356 friends
