@@ -1,9 +1,6 @@
 import { Box, Flex, Tooltip } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-// import { GoHomeFill } from 'react-icons/go';
-// import { FaUserFriends } from 'react-icons/fa';
-// import { IoIosNotifications } from 'react-icons/io';
-// import { IoCreate } from 'react-icons/io5';
+
 import { BiLogOut } from 'react-icons/bi';
 
 const VerticalSidebar = ({ sidebarItems }) => {
@@ -22,7 +19,6 @@ const VerticalSidebar = ({ sidebarItems }) => {
             <Flex
               borderRadius={6}
               _hover={{ bg: 'gray.300' }}
-              as={RouterLink}
               px={2}
               py={2}
               justifyContent={{ base: 'center', md: 'flex-start' }}

@@ -10,7 +10,6 @@ const PageLayout = ({ children }) => {
     base: 'horizontal',
     md: 'vertical',
   });
-
   return (
     <>
       {pathname !== '/auth' ? (
@@ -29,14 +28,16 @@ const PageLayout = ({ children }) => {
               </Box>
 
               {/* Suggested  user bar */}
-              <Box
-              bg={'gray.100'}
-                flex={1}
-                pr={2}
-                display={{ base: 'none', md: 'block' }}
-                maxW={{base:'none',md:'340px'}}>
-                <SuggestedUsers />
-              </Box>
+              {pathname === '/' && (
+                <Box
+                  bg={'gray.100'}
+                  flex={1}
+                  pr={2}
+                  display={{ base: 'none', md: 'block' }}
+                  maxW={{ base: 'none', md: '340px' }}>
+                  <SuggestedUsers />
+                </Box>
+              )}
             </Flex>
           ) : (
             <VStack className='HorizontalSidebar' h={'100vh'} gap={0}>
