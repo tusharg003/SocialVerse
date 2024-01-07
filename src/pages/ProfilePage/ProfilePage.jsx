@@ -1,5 +1,5 @@
 import { Box, Container } from '@chakra-ui/react';
-import ProfileHeader from '../../components/Profile/ProfileHeader';
+import ProfileHeader from '../../components/Profile/ProfileHeader/ProfileHeader';
 
 const ProfilePage = () => {
   return (

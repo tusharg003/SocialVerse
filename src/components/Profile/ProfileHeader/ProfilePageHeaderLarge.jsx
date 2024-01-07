@@ -7,9 +7,11 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import img from '../../../public/AuthPageImg.jpeg';
+import img from '../../../../public/AuthPageImg.jpeg';
+import { MdEdit } from 'react-icons/md';
+import { IoMdAdd, IoMdCamera } from 'react-icons/io';
 
-const ProfileHeader = () => {
+const ProfilePageHeaderLarge = () => {
   return (
     <VStack
       h={{ base: '35vh', md: '45vh' }}
@@ -22,32 +24,45 @@ const ProfileHeader = () => {
         className='ProfileBannerImage'
         overflow={'hidden'}
         borderBottomRadius={5}>
-        <Image w={'fit'} bg={'red'} src={img} />
+        <Image w={'fit'} src={img} />
       </Box>
       <Flex
-      
         gap={2}
         h={'35%'}
         w={'100%'}
         bg={'white'}
         className='profileBannerInfo'>
         <Avatar
-          size={{ base: 'xl', md: '2xl' }}
+          size={'2xl'}
+          colorScheme='cyan'
           border={'4px solid white'}
           name='Tushar Gupta'
-          top={'-50%'}
-          ml={{ base: '2', md: '10' }}
-        />
+          top={'-30%'}
+          ml={'10'}
+          pos={'relative'}>
+          <Box
+            as={Button}
+            size={'sm'}
+            pos={'absolute'}
+            bottom={0}
+            left={'70%'}
+            bg={'gray.300'}
+            p={1}
+            borderRadius={'full'}
+            >
+            <IoMdCamera color='black' size={'1.2em'} />
+          </Box>
+        </Avatar>
+
         <VStack alignItems={'flex-start'} gap={0} py={1}>
-          <Text fontSize={{ base: '1.2em', md: '1.7em' }} fontWeight={'bold'}>
+          <Text fontSize={'2em'} fontWeight={'bold'}>
             Tushar Gupta
           </Text>
           <Text
             lineHeight={'.8em'}
             fontSize={{ base: '.7em', md: '1em' }}
             fontWeight={'500'}
-            color={'gray'}
-            top={'-55%'}>
+            color={'gray'}>
             356 friends
           </Text>
         </VStack>
@@ -58,21 +73,13 @@ const ProfileHeader = () => {
           justifyContent={'space-around'}
           gap={2}
           mr={'1em'}>
-          <Button
-            colorScheme='blue'
-            fontSize={{ base: '.7em', md: '1em' }}
-            size={{ base: 'xs', md: 'md' }}>
+          <Button leftIcon={<IoMdAdd />} colorScheme='blue'>
             Add Story
           </Button>
-          <Button
-            fontSize={{ base: '.7em', md: '1em' }}
-            size={{ base: 'xs', md: 'md' }}>
-            Edit Profile
-          </Button>
+          <Button leftIcon={<MdEdit />}>Edit Profile</Button>
         </Flex>
       </Flex>
     </VStack>
   );
 };
-
-export default ProfileHeader;
+export default ProfilePageHeaderLarge;
