@@ -19,7 +19,7 @@ const FeedPosts = () => {
   }, []);
 
   return (
-    <VStack gap={5} py={4} px={2}>
+    <VStack gap={5} py={4} >
       {isLoading == true ? (
         [0, 1, 2, 3].map((_, idx) => (
           <VStack

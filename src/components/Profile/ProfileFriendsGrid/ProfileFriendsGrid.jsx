@@ -15,14 +15,14 @@ const ProfileFriendsGrid = () => {
       borderRadius={5}
       boxShadow={'md'}
       bg={'white'}
-      my={4}
+      mt={4}
       px={3}
       py={4}
-      mx={{ base: 'auto', lg: '0' }}
+      // mx={{ base: '3', lg: '0' }}
       h={'fit-content'}
       templateColumns={'repeat(3,1fr)'}
       gap={2}
-      maxWidth={{ base: '95%', lg: '25vw' }}>
+      maxWidth={{ base: '100%', lg: '25vw' }}>
       <GridItem colSpan={3} pb={2}>
         <Flex alignItems={'center'} justifyContent={'space-between'}>
           <VStack alignItems={'flex-start'} gap={0}>

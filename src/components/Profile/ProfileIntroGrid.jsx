@@ -9,13 +9,12 @@ const ProfileIntroGrid = () => {
       borderRadius={5}
       boxShadow={'md'}
       bg={'white'}
-      my={4}
+      mt={4}
       px={3}
       py={4}
-      mx={{ base: 'auto', lg: '0' }}
-      minHh={'20vh'}
-      gap={2}
-      maxWidth={{ base: '95%', lg: '25vw' }}>
+    //   mx={{ base: '3', lg: '0' }}
+      minH={'20vh'}
+      gap={2}>
       <Flex justifyContent={'space-between'}>
         <Text fontSize={'1.2em'} fontWeight={600}>
           Intro
