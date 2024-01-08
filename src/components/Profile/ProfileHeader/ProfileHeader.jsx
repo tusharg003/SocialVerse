@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Divider,
-  Flex,
-  Text,
-  useBreakpointValue,
-} from '@chakra-ui/react';
+import { Button, Divider, Flex, useBreakpointValue } from '@chakra-ui/react';
 import ProfilePageHeaderSmall from './ProfilePageHeaderSmall';
 import ProfilePageHeaderLarge from './ProfilePageHeaderLarge';
 
