@@ -13,18 +13,28 @@ const ProfilePage = () => {
         py={4}>
         <ProfileHeader />
         <Flex
-          px={{ base: 3, lg: 0 }}
+          px={{ base: 3, md: 0 }}
           flexDir={{ base: 'column', lg: 'row' }} // Set direction based on screen size
           gap={{ base: 0, lg: 4 }}>
           <Flex
+            pos={{ base: 'static', lg: 'sticky' }} // Set sticky position on lg screens
+            top={{ base: 'auto', lg: '-1' }} // Adjust top position on lg screens
+            zIndex={1}
+            className='profileLeftSide'
             flexDir={'column'}
             gap={0}
-            maxWidth={{ base: '100%', lg: '25vw' }}>
-            {/* friendGrid */}
+            maxWidth={{ base: '100%', lg: '25vw' }}
+            h={'fit-content'}>
+            {/* Left side*/}
             <ProfileIntroGrid />
             <ProfileFriendsGrid />
           </Flex>
-          <Flex flexDir={'column'} flexGrow={1}>
+          {/* Right side */}
+          <Flex
+            zIndex={2}
+            flexDir={'column'}
+            flexGrow={1}
+            className='profileRightSide'>
             <FeedPosts />
           </Flex>
         </Flex>
