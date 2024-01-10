@@ -10,7 +10,7 @@ const ProfilePage = () => {
       <Container
         maxW={{ base: '100vw', md: 'container.lg' }}
         px={{ base: 0, md: 4 }}
-        py={4}>
+        pb={4}>
         <ProfileHeader />
         <Flex
           px={{ base: 3, md: 0 }}

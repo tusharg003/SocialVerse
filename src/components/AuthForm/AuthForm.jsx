@@ -1,30 +1,12 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Image,
-  Input,
-  Text,
-  VStack,
-} from '@chakra-ui/react';
+import { Box, Flex, Text, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import Login from './Login';
+import Signup from './Signup';
+import GoogleSignup from './GoogleSignup';
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
-  const navigate = useNavigate();
-  const [inputs, setInputs] = useState({
-    email: '',
-    password: '',
-  });
 
-  const handleAuth = () => {
-    if (!inputs.email || !inputs.password) {
-      alert('Please fill all the feilds');
-      return;
-    }
-    navigate('/');
-  };
   return (
     <>
       <Box
@@ -34,86 +16,7 @@ const AuthForm = () => {
         px={4}
         py={8}>
         <VStack spacing={3} padding={'1em'}>
-          {isLogin ? (
-            <>
-              <Input
-                value={inputs.email}
-                onChange={(e) =>
-                  setInputs({ ...inputs, email: e.target.value })
-                }
-                color={'white'}
-                focusBorderColor='white'
-                _placeholder={{ opacity: 0.9, color: 'white' }}
-                placeholder='Email or username'
-                fontSize={14}
-                size={'sm'}
-                type='email'
-              />
-              <Input
-                value={inputs.password}
-                onChange={(e) =>
-                  setInputs({ ...inputs, password: e.target.value })
-                }
-                color={'white'}
-                focusBorderColor='white'
-                _placeholder={{ opacity: 0.9, color: 'white' }}
-                placeholder='Password'
-                fontSize={14}
-                size={'sm'}
-                type='password'
-              />
-
-              <Button
-                width={'100%'}
-                color='blue.500'
-                size={'sm'}
-                onClick={handleAuth}>
-                Log in
-              </Button>
-            </>
-          ) : (
-            <>
-              <Input
-                color={'white'}
-                focusBorderColor='white'
-                _placeholder={{ opacity: 0.9, color: 'white' }}
-                placeholder='Email'
-                fontSize={15}
-                size={'sm'}
-                type='email'
-              />
-              <Input
-                color={'white'}
-                focusBorderColor='white'
-                _placeholder={{ opacity: 0.9, color: 'white' }}
-                placeholder='Username'
-                fontSize={15}
-                size={'sm'}
-                type='text'
-              />{' '}
-              <Input
-                color={'white'}
-                focusBorderColor='white'
-                _placeholder={{ opacity: 0.9, color: 'white' }}
-                placeholder='Full Name'
-                fontSize={15}
-                size={'sm'}
-                type='text'
-              />
-              <Input
-                color={'white'}
-                focusBorderColor='white'
-                _placeholder={{ opacity: 0.9, color: 'white' }}
-                placeholder='Password'
-                fontSize={15}
-                size={'sm'}
-                type='password'
-              />
-              <Button width={'100%'} color='blue.500' size={'sm'}>
-                Sign Up
-              </Button>
-            </>
-          )}
+          {isLogin ? <Login /> : <Signup />}
 
           <Flex
             alignItems={'center'}
@@ -126,19 +29,8 @@ const AuthForm = () => {
             </Text>
             <Box flex={2} h={'1px'} bg={'white'}></Box>
           </Flex>
-
-          <Flex
-            alignItems={'center'}
-            justifyContent={'center'}
-            cursor={'pointer'}
-            lineHeight={'.1em'}>
-            <Image src={'/google.png'} w={5} />
-            <Text mx={'2'} color={'blue.500'} as={'b'} fontSize={15}>
-              {isLogin ? 'Log in ' : 'Sign up '}
-              with Google
-            </Text>
-          </Flex>
         </VStack>
+        <GoogleSignup />
       </Box>
 
       {/* Create account */}

@@ -7,7 +7,9 @@ const FeedPost = () => {
     <Box boxShadow={'md'} borderRadius={10} bg={'white'}>
       <PostHeader />
       <Box>
-        <Text  px={5} fontSize={'sm'}>this is a sample caption</Text>
+        <Text px={5} fontSize={'sm'}>
+          this is a sample caption
+        </Text>
         <Image src={defaultImg} alt='default image' />
       </Box>
       <PostFooter />
