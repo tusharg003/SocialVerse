@@ -18,7 +18,8 @@ import { BiLike } from 'react-icons/bi';
 import { useEffect, useRef, useState } from 'react';
 import { FaRegBookmark } from 'react-icons/fa';
 import { FaBookmark } from 'react-icons/fa';
-const PostFooter = () => {
+
+const PostFooter = ({ openModal }) => {
   const [likes, setLikes] = useState(1000);
   const [isLiked, setIsLiked] = useState(false);
   const [commmenting, setIsCommenting] = useState(false);
@@ -48,6 +49,7 @@ const PostFooter = () => {
     setIsSaved(!isSaved);
   };
   const inputRef = useRef(null);
+
   return (
     <VStack w={'100%'} pb={2} px={5}>
       <Flex
@@ -100,6 +102,15 @@ const PostFooter = () => {
       {/* Comment input section */}
       {commmenting && (
         <>
+          <Text
+            alignSelf={'start'}
+            cursor={'pointer'}
+            fontWeight={600}
+            fontSize={'sm'}
+            _hover={{ textDecoration: 'underline' }}
+            onClick={openModal}>
+            View all comments
+          </Text>
           <Divider />
           <InputGroup size={'sm'} borderRadius={3} py={1}>
             <InputLeftAddon border={'hidden'} cursor={'pointer'} bg={'white'}>
