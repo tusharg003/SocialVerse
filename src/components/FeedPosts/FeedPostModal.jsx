@@ -24,11 +24,11 @@ const FeedPostModal = () => {
         <ModalContent pt={1}>
           <ModalCloseButton />
           <ModalBody>
-            <Flex gap={5}>
+            <Flex gap={5} flexDirection={{ base: 'column', md: 'row' }}>
               <Box w={'60%'}>
                 <FeedPost />
               </Box>
-              <Box w={'40%'} pt={10} >
+              <Box w={'40%'} pt={10}>
                 <Comment />
                 <Comment />
                 <Comment />

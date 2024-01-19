@@ -16,7 +16,7 @@ const Comment = () => {
     }
   };
   return (
-    <Flex minW={'300px'} gap={2}  mb={2}>
+    <Flex  gap={2}  mb={2}>
       <Avatar size={'sm'} />
       <Flex
         flexDirection={'column'}

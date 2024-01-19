@@ -28,16 +28,20 @@ const FeedPost = () => {
         <PostFooter openModal={onOpen} isOpen={isOpen} />
       </Box>
       {/* all comment modal */}
-      <Modal isOpen={isOpen} onClose={onClose} size={'4xl'} isCentered>
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        size={{ base: '5xl', md: '4xl' }}
+        isCentered>
         <ModalOverlay />
         <ModalContent pt={1}>
           <ModalCloseButton />
           <ModalBody>
-            <Flex gap={5}>
-              <Box w={'60%'}>
+            <Flex gap={5} flexDirection={{ base: 'column', md: 'row' }}>
+              <Box w={{ base: '100%', md: '60%' }}>
                 <FeedPost />
               </Box>
-              <Box w={'40%'} pt={10}>
+              <Box  pt={10} w={{ base: '100%', md: '40%' }}>
                 <Comment />
                 <Comment />
                 <Comment />
