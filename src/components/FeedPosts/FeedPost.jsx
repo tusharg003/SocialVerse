@@ -1,4 +1,15 @@
-import { Box, Image, Text } from '@chakra-ui/react';
+import {
+  Avatar,
+  Box,
+  Button,
+  Image,
+  Input,
+  InputGroup,
+  InputLeftAddon,
+  InputRightAddon,
+  Text,
+  VStack,
+} from '@chakra-ui/react';
 import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
 import defaultImg from '../../../public/AuthPageImg.jpeg';
@@ -12,6 +23,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import Comment from '../Comment/Comment.jsx';
+import { IoSend } from 'react-icons/io5';
 const FeedPost = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -41,13 +53,39 @@ const FeedPost = () => {
               <Box w={{ base: '100%', md: '60%' }}>
                 <FeedPost />
               </Box>
-              <Box  pt={10} w={{ base: '100%', md: '40%' }}>
-                <Comment />
-                <Comment />
-                <Comment />
-                <Comment />
-                <Comment />
-              </Box>
+              <VStack
+                mb={2}
+                mt={10}
+                w={{ base: '100%', md: '40%' }}
+                justifyContent={'space-between'}>
+                <Box h={'80vh'} overflowY={'auto'}>
+                  <Comment />
+                  <Comment />
+                  <Comment />
+                  <Comment />
+                </Box>
+
+                <InputGroup size={'sm'} borderRadius={3} py={1}>
+                  <InputLeftAddon
+                    border={'hidden'}
+                    cursor={'pointer'}
+                    bg={'white'}>
+                    <Avatar size={'xs'} />
+                  </InputLeftAddon>
+                  <Input variant={'flushed'} placeholder='Post a Comment!' />
+
+                  <InputRightAddon
+                    as={Button}
+                    ml={3}
+                    bg={'white'}
+                    border={'hidden'}
+                    borderRadius={'50%'}
+                    p={2}
+                    transition={'0.2s ease-in-out'}>
+                    <IoSend />
+                  </InputRightAddon>
+                </InputGroup>
+              </VStack>
             </Flex>
           </ModalBody>
         </ModalContent>

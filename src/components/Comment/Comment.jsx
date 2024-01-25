@@ -16,19 +16,17 @@ const Comment = () => {
     }
   };
   return (
-    <Flex  gap={2}  mb={2}>
+    <Flex gap={2} mb={2}>
       <Avatar size={'sm'} />
       <Flex
         flexDirection={'column'}
         justifyContent={'space-between'}
         flexGrow={1}>
-        <Flex justifyContent={'flex-start'}flexDir={'column'}>
+        <Flex justifyContent={'flex-start'} flexDir={'column'}>
           <Box fontSize={'14'} fontWeight={'700'}>
             Username
           </Box>
-          <Box fontSize={'14'} fontWeight={'500'}>
-            this is a comment Lorem ipsum dolor 
-          </Box>
+          <Box fontSize={'14'}>this is a comment Lorem ipsum dolor lorem</Box>
         </Flex>
         <Flex justifyContent={'space-between'} alignItems={'center'}>
           <Box fontSize={'11'}>3weeks ago</Box>

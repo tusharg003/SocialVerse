@@ -39,7 +39,7 @@ const useSignUpWithEmailAndPassword = () => {
                 showToast('Success', 'New profile created', 'success')
             }
         } catch (error) {
-            showToast('Error', error.message, 'error')
+            showToast('Error', error, 'error')
         }
     }
     return { loading, signup, error }

@@ -1,9 +1,18 @@
-import { Box, Flex, Tooltip } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Alert, AlertIcon, Box, Button, Flex, Tooltip } from '@chakra-ui/react';
 
 import { BiLogOut } from 'react-icons/bi';
+import useLogout from '../../hooks/useLogout';
+import { useEffect } from 'react';
 
 const VerticalSidebar = ({ sidebarItems }) => {
+  const { handleLogout, loggingOut, error } = useLogout();
+
+  useEffect(() => {
+    if (error) {
+      alert(`Error: ${error.message}`);
+    }
+  }, [error]);
+
   return (
     <Box position='sticky' top={'0'} p={3} height='92vh' bg={'gray.100'}>
       <Flex direction='column' gap={2} cursor='pointer' height='100%'>
@@ -38,8 +47,7 @@ const VerticalSidebar = ({ sidebarItems }) => {
           ml='1'
           display={{ base: 'block', md: 'none' }}>
           <Flex
-            as={RouterLink}
-            to={'/auth'}
+            onClick={handleLogout}
             gap={2}
             p={2}
             marginTop={'auto'}
@@ -49,12 +57,24 @@ const VerticalSidebar = ({ sidebarItems }) => {
             _hover={{ bg: 'gray.300' }}
             justifyContent={{ base: 'center', md: 'flex-start' }}>
             <BiLogOut size={25} />
-            <Box ml={2} display={{ base: 'none', md: 'block' }}>
+            <Button
+              variant={'ghost'}
+              _hover={{ bgColor: 'transparent' }}
+              ml={2}
+              display={{ base: 'none', md: 'block' }}
+              isLoading={loggingOut}>
               Log Out
-            </Box>
+            </Button>
           </Flex>
         </Tooltip>
       </Flex>
+      {/* Display an alert for the error */}
+      {error && (
+        <Alert status='error' mt={4} borderRadius={6}>
+          <AlertIcon />
+          {error.message}
+        </Alert>
+      )}
     </Box>
   );
 };

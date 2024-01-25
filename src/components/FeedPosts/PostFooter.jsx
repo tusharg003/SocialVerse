@@ -59,7 +59,9 @@ const PostFooter = ({ openModal }) => {
         px={4}
         mt={2}>
         <Box>{likes} Likes</Box>
-        <Box>69 Comments</Box>
+        <Box cursor={'pointer'} onClick={openModal}>
+          69 Comments
+        </Box>
       </Flex>
       {/* <Box h={'2px'} w={'100%'} bgColor={'gray.400'}></Box> */}
       <Divider />
