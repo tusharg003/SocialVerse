@@ -3,16 +3,21 @@ import { useLocation } from 'react-router-dom';
 import Sidebar from '../components/Sidebar/Sidebar';
 import Navbar from '../components/NavBar/Navbar';
 import SuggestedUsers from '../components/SuggestedUsers/SuggestedUsers';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../firebase/firebase';
 
 const PageLayout = ({ children }) => {
   const { pathname } = useLocation();
+  const [user, loading, error] = useAuthState(auth);
+  console.log(user);
+  const canRenderSidebar = pathname != '/auth' && user;
   const sidebarDirection = useBreakpointValue({
     base: 'horizontal',
     md: 'vertical',
   });
   return (
     <>
-      {pathname !== '/auth' ? (
+      {canRenderSidebar ? (
         <>
           <Box h={'3em'} pos={'sticky'} top={0} zIndex={12}>
             <Navbar />
