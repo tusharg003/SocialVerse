@@ -1,14 +1,14 @@
 import { Box, Flex, VStack, useBreakpointValue } from '@chakra-ui/react';
 import { useLocation } from 'react-router-dom';
 import Sidebar from '../components/Sidebar/Sidebar';
-import Navbar from '../components/NavBar/Navbar';
+// import Navbar from '../components/NavBar/Navbar';
 import SuggestedUsers from '../components/SuggestedUsers/SuggestedUsers';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase/firebase';
 
 const PageLayout = ({ children }) => {
   const { pathname } = useLocation();
-  const [user, loading, error] = useAuthState(auth);
+  const [user, , ] = useAuthState(auth);
   console.log(user);
   const canRenderSidebar = pathname != '/auth' && user;
   const sidebarDirection = useBreakpointValue({
@@ -19,11 +19,11 @@ const PageLayout = ({ children }) => {
     <>
       {canRenderSidebar ? (
         <>
-          <Box h={'3em'} pos={'sticky'} top={0} zIndex={12}>
+          {/* <Box h={'3em'} pos={'sticky'} top={0} zIndex={12}>
             <Navbar />
-          </Box>
+          </Box> */}
           {sidebarDirection === 'vertical' ? (
-            <Flex className='verticalSidebar' h={'92vh'} overflow={'hidden'}>
+            <Flex className='verticalSidebar' h={'100vh'} overflow={'hidden'}>
               <Box w={{ md: '240px' }} overflowY={'auto'}>
                 <Sidebar />
               </Box>

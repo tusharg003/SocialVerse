@@ -14,7 +14,7 @@ const VerticalSidebar = ({ sidebarItems }) => {
   }, [error]);
 
   return (
-    <Box position='sticky' top={'0'} p={3} height='92vh' bg={'gray.100'}>
+    <Box position='sticky' top={'0'} p={3} height='100vh' bg={'gray.100'}>
       <Flex direction='column' gap={2} cursor='pointer' height='100%'>
         {sidebarItems.map((item, index) => (
           <Tooltip
